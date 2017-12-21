@@ -1,5 +1,6 @@
-<!-- <?php print_r($data); ?> -->
-
+<!-- <pre>
+<?php print_r($data); ?>
+</pre> -->
 <script>
   function hanyaAngka(evt) {
     var charCode = (evt.which) ? evt.which : event.keyCode
@@ -24,11 +25,21 @@
                     <br><br>
                     <input type="text" maxlength="2" onkeypress="return hanyaAngka(event)" name="suhuA"class="form-control" placeholder="Batas Atas" required>
                     <p class="help-block">Masukan batas Suhu aman teratas</p>
+                    <p class="help-block" style="color : red">Batas Atas Terakhir (
+                              <?php
+                              echo $data['s'][0]->suhuA;
+                              ?> &deg;C )
+                    </p>
                 </div>
                 <br>
                 <div class="form-group">
                     <input type="text" maxlength="2" onkeypress="return hanyaAngka(event)" name="suhuB"class="form-control" placeholder="Batas Bawah" required>
                     <p class="help-block">Masukan batas Suhu aman terendah</p>
+                    <p class="help-block" style="color : red">Batas Bawah Terakhir (
+                              <?php
+                              echo $data['s'][0]->suhuB;
+                              ?> &deg;C )
+                    </p>
                 </div>
 
                 <button type="submit" class="btn btn-default">Update Data Batas Suhu</button>
@@ -50,11 +61,21 @@
                     <br><br>
                     <input type="text" maxlength="2" onkeypress="return hanyaAngka(event)" name="kelembabanA"class="form-control" placeholder="Batas Atas" required>
                     <p class="help-block">Masukan batas Kelembaban aman teratas</p>
+                    <p class="help-block" style="color : red;">Batas Atas Terakhir (
+                              <?php
+                              echo $data['k'][0]->kelembabanA;
+                              ?> % )
+                    </p>
                 </div>
                 <br>
                 <div class="form-group">
                     <input type="text" maxlength="2" onkeypress="return hanyaAngka(event)" name="kelembabanB"class="form-control" placeholder="Batas Bawah" required>
                     <p class="help-block">Masukan batas Kelembaban aman terendah</p>
+                    <p class="help-block" style="color : red">Batas Bawah Terakhir (
+                              <?php
+                              echo $data['k'][0]->kelembabanB;
+                              ?> % )
+                    </p>
                 </div>
 
                 <button type="submit" class="btn btn-default">Update Data Batas Kelembaban</button>

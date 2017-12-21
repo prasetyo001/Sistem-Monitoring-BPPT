@@ -35,10 +35,10 @@
                     <tr>
                       <th colspan="4" align="center">
                         <?php echo $this->pagination->create_links(); ?>
-                        <a class="btn btn-default navbar-right" data-toggle="modal" target="_blank" style="position: relative; margin-right: 10px;" href="<?php echo base_url()?>index.php/c_exel/export_excel">
+                       <!-- <a class="btn btn-default navbar-right" data-toggle="modal" target="_blank" style="position: relative; margin-right: 10px;" href="<?php echo base_url().'index.php/c_excel/export_room4/'. $this->uri->segment(3);?>">
                           <i class="glyphicon glyphicon-print"></i> Export Excel</a>
                        <a class="btn btn-default navbar-right" data-toggle="modal" target="_blank" style="position: relative; margin-right: 10px;" href="<?php echo base_url().'index.php/claporanpdf/room4/'. $this->uri->segment(3);?>">
-                          <i class="glyphicon glyphicon-print"></i> Print PDF</a>
+                          <i class="glyphicon glyphicon-print"></i> Print PDF</a> -->
                       </tr>
                   </table>
 

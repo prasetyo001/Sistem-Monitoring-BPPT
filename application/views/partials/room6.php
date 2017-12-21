@@ -2,8 +2,15 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4>History Room 1</h4>
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-lg-11">
+                <h4>History Room 6</h4>
+              </div>
+              <div class="col-lg-1">
+                <a href="<?= base_url();?>index.php/monitoring/suhu2"><button class="bawah btn btn-primary">Back</button></a>
+              </div>
+            </div>
             </div>
 
             <div class="panel-body">
@@ -19,7 +26,7 @@
                     <tbody>
 
                     <?php
-                          $no = 1;
+                          $no = 6;
                             foreach($get_suhu_room[$no] as $key => $a){
                         ?>
                           <tr>
@@ -35,10 +42,9 @@
                     <tr>
                       <th colspan="4" align="center">
                         <?php echo $this->pagination->create_links(); ?>
-
-                        <!-- <a class="btn btn-default navbar-right" data-toggle="modal" target="_blank" style="position: relative; margin-right: 10px;" href="<?php echo base_url().'index.php/c_excel/export_room1/' . $this->uri->segment(3);?>">
+                        <!-- <a class="btn btn-default navbar-right" data-toggle="modal" target="_blank" style="position: relative; margin-right: 10px;" href="<?php echo base_url().'index.php/c_excel/export_room6/' . $this->uri->segment(3);?>">
                           <i class="glyphicon glyphicon-print"></i> Export Excel</a>
-                        <a class="btn btn-default navbar-right" data-toggle="modal" target="_blank" style="position: relative; margin-right: 10px;" href="<?php echo base_url().'index.php/claporanpdf/room1/'. $this->uri->segment(3);?>">
+                        <a class="btn btn-default navbar-right" data-toggle="modal" target="_blank" style="position: relative; margin-right: 10px;" href="<?php echo base_url().'index.php/claporanpdf/room6/'. $this->uri->segment(3);?>">
                           <i class="glyphicon glyphicon-print"></i> Print PDF</a> -->
                       </tr>
                   </table>

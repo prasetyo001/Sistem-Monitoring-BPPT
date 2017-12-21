@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-// $title = "Laporan_Monitoring-(".date('d-F-Y').").xls";
+$title = "Laporan_Monitoring-(".date('d-F-Y').").xls";
  header("Content-Disposition: attachment; filename=$title");
  header("Content-type: application/vnd.ms-excel");
 

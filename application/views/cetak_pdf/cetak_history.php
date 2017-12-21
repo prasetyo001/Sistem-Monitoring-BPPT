@@ -1,3 +1,4 @@
+<!-- <?php '<pre>'.print_r($rsuhu).'</pre>'; ?> -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,6 +35,8 @@
         <th>Kelembaban</th>
 
     </tr>
+
+
     <?php $no=0; foreach($rsuhu as $d){
     $no++;
     ?>

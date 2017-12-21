@@ -7,26 +7,6 @@ class C_excel extends CI_Controller {
       parent::__construct();
       $this->load->model('mlaporan');
   }
-
-     //halaman awal untuk menampilkan tabel
-     // public function index() {
-     //      $this->load->model('m_exel');
-     //      $data = array( 'title' => 'Data Buku | Tutorial Export ke excel CodeIgniter @ https://recodeku.blogspot.com',
-     //           'buku' => $this->m_exel->getAll());
-     //
-     //      $this->load->view('vw_excel',$data);
-
-
-     //export ke dalam format excel
-    //  public function export_excel(){
-    //       $this->load->model('m_exel');
-    //       $data = array(
-    //           'title' => "Laporan_Monitoring-(".date('d-F-Y').").xls",
-    //           'rsuhu' => $this->m_exel->getAll()
-    //                     );
-     //
-    //       $this->load->view('partials/cetak_exel.php', $data);
-        // }
       function export_history($segment = null){
          $offset = $segment;
          $data['title'] = "Laporan_Monitoring-(".date('d-F-Y').").xls"; //judul title
@@ -65,8 +45,3 @@ class C_excel extends CI_Controller {
       }
 
 }
-
-
-
-/* End of file C_excel.php */
-/* Location: ./application/controllers/C_excel.php */

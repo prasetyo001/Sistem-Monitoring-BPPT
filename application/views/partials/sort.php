@@ -1,4 +1,6 @@
-<!-- <?php '<pre>'.print_r($data).'</pre>'; ?> -->
+<!-- <?php echo '<pre>';?>
+  <?php print_r($suhu);?>
+  <?php '</pre>'; ?> -->
 <br/>
 
 <div class="row">
@@ -9,40 +11,26 @@
                     <div class="col-lg-5" >
                       <h4>History Monitoring</h4>
                     </div>
-                    <div class="col-lg-2" style="align: right" >
-                          <!-- <label> Cari berdasarkan Tanggal</label> -->
+                    <div class="col-lg-3" style="align: right" >
                     </div>
-                    <div class="row">
-                        <form action="<?= base_url('index.php/report/sort');?>" method="POST">
-                        <div class='col-xs-2'>
-                            <div class="form-group">
-                                <div class='input-group date' id='datetimepicker6'>
-                                    <input type='date' class="form-control" name="ts" />
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
-                                </div>
-                            </div>
+                        <div class="col-lg-2" >
+                          <p class="help-block" style="color: blue">Dari tanggal (
+                            <?php
+                                $s= $suhu['temp']['date_awal'];
+                                echo $new_date = date_format(date_create($s), 'd-m-Y');
+                            ?> )
+                          </p>
                         </div>
-                        <div class='col-xs-2'>
-                            <div class="form-group">
-                                <div class='input-group date' id='datetimepicker7'>
-                                    <input type='date' class="form-control" name="te" />
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
-                                </div>
-                            </div>
+                        <div class="col-lg-2" >
+                          <p class="help-block" style=" color: blue">Sampai tanggal (
+                              <?php
+                                  $t= $suhu['temp']['date_akhir'];
+                                  echo $new_date = date_format(date_create($t), 'd-m-Y');
+                              ?> )
+                            </p>
                         </div>
-                        <div class="col-xs-1">
-
-                          <div class="form-group">
-                            <input type="submit" value="sort" class="btn btn-primary">
-                          </div>
-
-                        </div>
-                        </form>
-                      </div>
+                  </div>
+                </div>
 
                 </div>
             </div>
@@ -62,7 +50,7 @@
                     <tbody>
                         <?php
 		                      $no = $this->uri->segment('3') + 1;
-		                        foreach($suhu as $u => $a){
+		                        foreach($suhu['suhu'] as $u => $a){
 		                    ?>
 		                      <tr>
                                 <td><?php echo $u + 1; ?></td>
@@ -84,6 +72,7 @@
                         <th colspan="3" style="text-align: left;">
                        <?php echo $this->pagination->create_links(); ?>
                         </th>
+                        <a class="btn btn-primary navbar-right" data-toggle="modal" style="position: relative; margin-right: 10px;" href="<?php echo base_url() .'index.php/monitoring/history'?>"> Back </a>
 
             </div>
             <!-- /.panel-body -->

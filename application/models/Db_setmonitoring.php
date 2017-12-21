@@ -13,6 +13,9 @@ class Db_setmonitoring extends CI_Model {
   function ambil_kelembaban(){
     return $this->db->get('set_kelembaban','')->result();
   }
+  function delay($data, $tabel){
+    $this->db->update($tabel, $data);
+  }
 
 }
 /* End of file ${TM_FILENAME:${1/(.+)/lSet_monitoring.php/}} */

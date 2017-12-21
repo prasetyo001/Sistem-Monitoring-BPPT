@@ -9,10 +9,6 @@ class  Data_suhu extends CI_Model {
     function jumlah_data(){
       return $this->db->get('room1')->num_rows();
 }
-    // function jumlah_data_kd(){
-    //   $this->db->where(array('kd_room' => $kd));
-    //   return $this->db->get('room1')->num_rows();
-    // }
     function input_data($data, $tabel){
         $this->db->insert($tabel,$data);
 }
