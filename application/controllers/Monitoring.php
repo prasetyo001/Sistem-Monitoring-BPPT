@@ -88,27 +88,10 @@ class Monitoring extends CI_Controller
 
   }
 
-  function updatedata(){
-    $this->load->model('data_suhu');
-
-    $kd_room = $this->input->post('kd_room');
- 		$suhu = $this->input->post('suhu');
- 		$kelembapan = $this->input->post('kelembapan');
-
- 		$data = array(
-
- 			'kd_room' => $kd_room,
- 			'suhu' => $suhu,
- 			'kelembapan' => $kelembapan
-
- 			);
- 		$this->data_suhu->input_data($data,'room1');
-     redirect('monitoring/index');
-
-   }
    function v_delay(){
      $this->template->set_layout('tampilan')->build('/partials/input_delay');
    }
+   
    function u_delay(){
      $this->load->model('db_setmonitoring');
 
