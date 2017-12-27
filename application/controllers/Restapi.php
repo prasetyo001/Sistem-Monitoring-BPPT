@@ -28,21 +28,49 @@
         function updatedata_get(){
             $this->load->model('data_suhu');
 
-                $kd_room = $this->input->get('kd_room');
-                $suhu = $this->input->get('suhu');
-                $kelembapan = $this->input->get('kelembapan');
+            $kd_room = $this->input->get('kd_room');
+            $suhu = $this->input->get('suhu');
+            $kelembapan = $this->input->get('kelembapan');
 
-                $data = array(
+            $data = array(
 
-                    'kd_room' => $kd_room,
-                    'suhu' => $suhu,
-                    'kelembapan' => $kelembapan
+                'kd_room' => $kd_room,
+                'suhu' => $suhu,
+                'kelembapan' => $kelembapan
 
-                    );
-                $this->data_suhu->input_data($data,'room1');
+                );
+            $this->data_suhu->input_data($data,'room1');
 
-             $this->response("OK",200);
+            $suhuA = $this->data_suhu->getSuhuA();
+            $suhuB = $this->data_suhu->getSuhuB();
+
+            if($suhuA > $suhu || $suhuB < $suhu){
+                echo "suhu diatas batas ketentuan";
+            }
+
+         $this->response("OK",200);
 
         }
-	}
+
+        function addChatID_post(){
+          $this->load->model('chatbot_model');
+
+          $chatID = $this->input->post('chat_id');
+          
+          $data = array(
+            'chat_id' => $chatID
+          );
+
+          $cek = $this->chatbot_model->getChatID($chatID);
+
+          if($cek == FALSE){
+            $this->chatbot_model->input_data($data,'telegram');
+          }else{
+            echo "data is exist";
+          }
+          
+
+          $this->response("OK", 200);
+       }
+	   }
  ?>
