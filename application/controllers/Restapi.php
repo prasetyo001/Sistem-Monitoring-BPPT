@@ -38,17 +38,19 @@
                 'suhu' => $suhu,
                 'kelembapan' => $kelembapan
 
-                );
+            );
+
+            $suhuMaks = $this->db->select('suhuA')->from('set_suhu')->get()->result();
+            $suhuMin = $this->db->select('suhuB')->from('set_suhu')->get()->result();
+
+
             $this->data_suhu->input_data($data,'room1');
 
-            $suhuA = $this->data_suhu->getSuhuA();
-            $suhuB = $this->data_suhu->getSuhuB();
-
-            if($suhuA > $suhu || $suhuB < $suhu){
+            if($suhu > $suhuMaks[0]->suhuA || $suhu < $suhuMin[0]->suhuB){
                 echo "suhu diatas batas ketentuan";
             }
 
-         $this->response("OK",200);
+            $this->response("OK",200);
 
         }
 
@@ -72,5 +74,5 @@
 
           $this->response("OK", 200);
        }
-	   }
+	}
  ?>
