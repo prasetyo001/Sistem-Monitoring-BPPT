@@ -12,9 +12,9 @@
     	{
     		$this->load->model('suhu_model');
     		$this->load->database();
-    		$id = $this->get('id');
-    		$data = $this->suhu_model->rest_latestSuhu($id);
-        	$this->response($data);
+    		// $id = $this->get('id');
+    		$data = $this->suhu_model->rest_latestSuhu();
+        $this->response($data);
     	}
         
         function delay_get(){

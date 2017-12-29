@@ -19,8 +19,8 @@ class Suhu_model extends CI_Model{
       return $query = $this->db->order_by('time', 'DESC')->get('room1',$number,$offset)->result();
  	}
 
-	function rest_latestSuhu($id){
- 		return $this->db->where('kd_room',$id)->order_by('time','DESC')->get('room1',1)->result();
+	function rest_latestSuhu(){
+ 		return $this->db->order_by('time','DESC')->get('room1',5)->result();
  	}
 
  	function rest_warningSuhu($id){
