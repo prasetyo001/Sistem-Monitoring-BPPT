@@ -83,7 +83,7 @@ bot.on('*', (msg, self) => {
             id, `Saya tidak mengerti maksud anda.. 🙏🏻`, {replyToMessage, parseMode}
         );
     }else if(type == 'command'){
-        if(msg.text != "/pantau"){
+        if(msg.text != "/pantau" || msg.text != "/start"){
             return bot.sendMessage(id, 'saya tidak mengerti maksud anda.. 🙏🏻', {replyToMessage});
         }
     }
